@@ -1,0 +1,6 @@
+aws_signing_helper serve \
+--certificate /aws/client.crt \
+--private-key /aws/client.key \
+--role-arn $ROLE_ARN \
+--trust-anchor-arn $TRUST_ANCHOR_ARN \
+--profile-arn $PROFILE_ARN
