@@ -1,3 +1,4 @@
+#!/bin/sh
 aws_signing_helper serve \
 --certificate /aws/client.crt \
 --private-key /aws/client.key \
