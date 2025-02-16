@@ -11,9 +11,6 @@ jobs:
         name: "Build container images"
         runs-on: "ubuntu-latest"
         steps:
-            - name: Checkout
-              uses: actions/checkout@v4
-
             - name: Set up QEMU
               uses: docker/setup-qemu-action@v3
       
@@ -24,4 +21,5 @@ jobs:
               uses: docker/build-push-action@v6
               with:
                 platforms: linux/amd64,linux/arm64
-                tags: iam-roles-anywhere:latest
+                tags: ghcr.io/stujonesuk/iam-roles-anywhere-container:latest
+                push: true
