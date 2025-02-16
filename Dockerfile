@@ -1,5 +1,5 @@
-FROM amazonlinux:2 AS builder
-RUN yum -y groupinstall 'Development Tools' && yum -y install golang-go && git clone https://github.com/aws/rolesanywhere-credential-helper.git
+FROM golang AS builder
+RUN git clone https://github.com/aws/rolesanywhere-credential-helper.git
 RUN mkdir /aws && mv ./rolesanywhere-credential-helper /aws/
 RUN cd /aws/rolesanywhere-credential-helper && sed -i "s/127\.0\.0\.1/0\.0\.0\.0/g" ./aws_signing_helper/serve.go && make release
 
