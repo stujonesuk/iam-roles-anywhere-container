@@ -4,4 +4,5 @@ aws_signing_helper serve \
 --private-key /aws/client.key \
 --role-arn $ROLE_ARN \
 --trust-anchor-arn $TRUST_ANCHOR_ARN \
---profile-arn $PROFILE_ARN
+--profile-arn $PROFILE_ARN \
+--port 80
